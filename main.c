@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:59:47 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/09 16:50:53 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/09 18:29:26 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 int	main(void)
 {
 	int	a;
-
-	a = ft_printf("dfkjslkfdjs%dijskdjflsjdf%s", 0);
-	printf("\n%d\n", a);
+   	a = ft_printf("%p %p\n", 0, 0);
+//	printf("%d\n", a);
+	//a = printf("%p %p\n", 0, 0);
+//	printf("%d\n", a);
 }

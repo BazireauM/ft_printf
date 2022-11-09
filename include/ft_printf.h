@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 20:00:27 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/09 16:50:55 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/09 18:29:29 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ char	*arg_char(const char *s, int n_arg);
 int		choose_type(va_list arg, char c, int *a);
 int		choose_c(va_list arg, int *a);
 int		choose_s(va_list arg, int *a);
-int		choose_p(va_list arg);
+int		choose_p(va_list arg, int *a);
 int		choose_d(va_list arg, int *a);
 int		choose_u(va_list arg, int *a);
-int		choose_x(va_list arg);
-int		choose_xmaj(va_list arg);
+int		choose_x(va_list arg, int *a);
+int		choose_xmaj(va_list arg, int *a);
 int		choose_for_100(int *a);
 size_t	ft_print_table_table(char **final);
 char	**return_final(const char *s, va_list arg, char **final);
