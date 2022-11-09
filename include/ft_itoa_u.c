@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 12:31:03 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/09 12:53:50 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/09 16:43:48 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ char	*ft_itoa_u(unsigned int n)
 	if (n == 0)
 	{
 		final = malloc(2);
+		if (!final)
+			return (NULL);
 		zero_u(final);
 		return (final);
 	}

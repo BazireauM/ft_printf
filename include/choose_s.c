@@ -6,22 +6,20 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 12:55:57 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/09 15:18:02 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/09 15:32:56 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	choose_s(va_list arg)
+int	choose_s(va_list arg, int *a)
 {
 	char	*s;
-	int		i;
 	int		c;
-	int		b;
+	int		i;
 
 	s = va_arg(arg, char *);
 	i = 0;
-	b = 0;
 	if (s != NULL)
 	{
 		while (s[i])
@@ -29,7 +27,7 @@ int	choose_s(va_list arg)
 			c = write(1, &s[i], 1);
 			if (c == -1)
 				return (-1);
-			b += c;
+			*a += c;
 			i++;
 		}
 	}
@@ -38,7 +36,7 @@ int	choose_s(va_list arg)
 		c = write (1, &"(null)", 6);
 		if (c == -1)
 			return (-1);
-		b += c;
+		*a += c;
 	}
-	return (b);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 20:00:27 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/09 15:18:10 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/09 16:50:55 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ int		check_exist(char c);
 char	*arg_char(const char *s, int n_arg);
 int		choose_type(va_list arg, char c, int *a);
 int		choose_c(va_list arg, int *a);
-int		choose_s(va_list arg);
+int		choose_s(va_list arg, int *a);
 int		choose_p(va_list arg);
 int		choose_d(va_list arg, int *a);
-int		choose_u(va_list arg);
+int		choose_u(va_list arg, int *a);
 int		choose_x(va_list arg);
 int		choose_xmaj(va_list arg);
 int		choose_for_100(int *a);
@@ -44,6 +44,7 @@ void	free_final(char **final);
 char	*ft_itoa(int n);
 size_t	ft_strlen(const char *s);
 void	ft_putstr_fd(char *s, int fd);
-int		ft_putnbr(int n);
+int		ft_putnbr(int n, int *a);
+char	*ft_itoa(int n);
 
 #endif
