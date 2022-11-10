@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 19:31:11 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/09 17:41:56 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/10 14:35:11 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,27 @@
 
 int	choose_xmaj(va_list arg, int *a)
 {
-	unsigned int	b;
-	char			*test;
-	int				c;
-	int				i;
+	struct s_norm_x	test;
 
-	b = va_arg(arg, unsigned int);
-	test = ft_putnbr_base(b, "0123456789ABCDEF");
-	i = 0;
-	if (test == NULL)
-	{
-		free(test);
+	test.b = va_arg(arg, unsigned int);
+	test.s = ft_putnbr_base(test.b, "0123456789ABCDEF");
+	test.i = 0;
+	if (test.s == NULL)
 		return (-1);
-	}
-	while (test[i])
-		i++;
-	i--;
-	while (i >= 0)
+	while (test.s[test.i])
+		test.i++;
+	test.i--;
+	while (test.i >= 0)
 	{
-		c = write(1, &test[i], 1);
-		if (c == -1)
+		test.c = write(1, &test.s[test.i], 1);
+		if (test.c == -1)
 		{
-			free(test);
+			free(test.s);
 			return (-1);
 		}
-		*a += c;
-		i--;
+		*a += test.c;
+		test.i--;
 	}
-	free(test);
+	free(test.s);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 19:19:25 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/10 13:48:46 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/10 14:31:47 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,27 @@
 
 int	choose_x(va_list arg, int *a)
 {
-	unsigned int	b;
-	char			*test;
-	int				c;
-	int				i;
+	struct s_norm_x	test;
 
-	b = va_arg(arg, unsigned int);
-	test = ft_putnbr_base(b, "0123456789abcdef");
-	i = 0;
-	if (!test)
-	{
+	test.b = va_arg(arg, unsigned int);
+	test.s = ft_putnbr_base(test.b, "0123456789abcdef");
+	test.i = 0;
+	if (!test.s)
 		return (-1);
-	}
-	while (test[i])
-		i++;
-	i--;
-	while (i >= 0)
+	while (test.s[test.i])
+		test.i++;
+	test.i--;
+	while (test.i >= 0)
 	{
-		c = write(1, &test[i], 1);
-		if (c == -1)
+		test.c = write(1, &test.s[test.i], 1);
+		if (test.c == -1)
 		{
-			free(test);
+			free(test.s);
 			return (-1);
 		}
-		*a += c;
-		i--;
+		*a += test.c;
+		test.i--;
 	}
-	free(test);
+	free(test.s);
 	return (0);
 }
