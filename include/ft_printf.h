@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 20:00:27 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/09 18:29:29 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/10 13:54:03 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,22 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
+
+typedef struct s_norm 
+{
+	int	a;
+	int	i;
+	int c;
+	int d;
+}	t_norm;
+
+typedef struct s_norm2
+{
+	int		b;
+	int		i;
+	int		c;
+	char	*s;
+}	t_norm2;
 
 int		ft_printf(const char *s, ...);
 int		count_n_arg(const char *s);

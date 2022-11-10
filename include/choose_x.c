@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 19:19:25 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/09 17:40:21 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/10 13:48:46 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,8 @@ int	choose_x(va_list arg, int *a)
 	b = va_arg(arg, unsigned int);
 	test = ft_putnbr_base(b, "0123456789abcdef");
 	i = 0;
-	if (test == NULL)
+	if (!test)
 	{
-		free(test);
 		return (-1);
 	}
 	while (test[i])

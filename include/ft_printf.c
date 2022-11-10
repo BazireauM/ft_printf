@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 18:21:47 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/09 16:47:10 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/10 13:54:00 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,33 @@
 int	ft_printf(const char *s, ...)
 {
 	va_list	arg;
-	int		a;
-	int		i;
-	int		c;
-	int		d;
+	struct s_norm	test;
 
 	va_start(arg, s);
-	i = 0;
-	d = 0;
-	a = 0;
-	while (s[i])
+	test.i = 0;
+	test.d = 0;
+	test.a = 0;
+	if (s == NULL)
+		return (-1);
+	while (s[test.i])
 	{
-		if (s[i] != '%' && s[i])
+		if (s[test.i] != '%' && s[test.i])
 		{
-			c = write(1, &s[i], 1);
-			if (c == -1)
+			test.c = write(1, &s[test.i], 1);
+			if (test.c == -1)
 				return (-1);
-			a++;
-			i++;
+			test.a++;
+			test.i++;
 		}
-		else if (s[i] == '%' && s[i + 1])
+		else if (s[test.i] == '%' && s[test.i + 1])
 		{
-			c = choose_type(arg, (char)s[i + 1], &a);
-			if (c == -1)
+			test.c = choose_type(arg, (char)s[test.i + 1], &test.a);
+			if (test.c == -1)
 				return (-1);
-			i += 2;
+			test.i += 2;
 		}
 		else
-			i++;
+			test.i++;
 	}
-	return (a);
+	return (test.a);
 }

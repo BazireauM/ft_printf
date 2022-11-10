@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 11:23:28 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/09 18:29:23 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/10 13:41:32 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ char	*ft_putnbr_base(unsigned long long nbr, char *base)
 		nbr /= 16;
 		i++;
 	}
+	final[i] = '\0';
 	return (final);
 }
