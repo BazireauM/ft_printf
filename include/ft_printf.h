@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 20:00:27 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/10 14:02:00 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/10 14:24:01 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,13 @@ typedef struct s_norm2
 	int		c;
 	char	*s;
 }	t_norm2;
+
+typedef struct s_norm_putnbr_base
+{
+	int					i;
+	unsigned long long	a;
+	char				*final;
+}	t_norm_putnbr_base;
 
 int		ft_printf(const char *s, ...);
 int		count_n_arg(const char *s);

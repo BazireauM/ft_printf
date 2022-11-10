@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 11:23:28 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/10 13:41:32 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/10 14:23:58 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,30 +31,28 @@ char	*test_zero(unsigned long long nbr)
 
 char	*ft_putnbr_base(unsigned long long nbr, char *base)
 {
-	int					i;
-	unsigned long long	a;
-	char				*final;
+	struct s_norm_putnbr_base	test;
 
-	final = test_zero(nbr);
+	test.final = test_zero(nbr);
 	if (nbr == 0)
-		return (final);
-	a = nbr;
-	i = 0;
-	while (a > 0)
+		return (test.final);
+	test.a = nbr;
+	test.i = 0;
+	while (test.a > 0)
 	{
-		a /= 16;
-		i++;
+		test.a /= 16;
+		test.i++;
 	}
-	final = malloc(sizeof(char) * (i + 1));
-	if (!final)
+	test.final = malloc(sizeof(char) * (test.i + 1));
+	if (!test.final)
 		return (NULL);
-	i = 0;
+	test.i = 0;
 	while (nbr > 0)
 	{
-		final[i] = base[nbr % 16];
+		test.final[test.i] = base[nbr % 16];
 		nbr /= 16;
-		i++;
+		test.i++;
 	}
-	final[i] = '\0';
-	return (final);
+	test.final[test.i] = '\0';
+	return (test.final);
 }
