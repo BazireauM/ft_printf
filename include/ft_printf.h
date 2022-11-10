@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 20:00:27 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/10 13:54:03 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/10 14:02:00 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 # include <stdlib.h>
 # include <stdarg.h>
 
-typedef struct s_norm 
+typedef struct s_norm
 {
 	int	a;
 	int	i;
-	int c;
-	int d;
+	int	c;
+	int	d;
 }	t_norm;
 
 typedef struct s_norm2

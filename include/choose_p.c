@@ -6,7 +6,7 @@
 /*   By: mbazirea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 19:35:27 by mbazirea          #+#    #+#             */
-/*   Updated: 2022/11/09 18:29:21 by mbazirea         ###   ########.fr       */
+/*   Updated: 2022/11/10 13:55:40 by mbazirea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	choose_p(va_list arg, int *a)
 	if (c == -1)
 	{
 		free(test);
-		return(-1);
+		return (-1);
 	}
 	*a += c;
 	while (i >= 0)
